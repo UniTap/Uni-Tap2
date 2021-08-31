@@ -1,6 +1,7 @@
 import React from 'react'
 import $ from 'jquery'
 import "./LoginPage.css"
+import loginImg from "./LoginImg.svg"
 
 function LoginPage(){
 
@@ -115,6 +116,10 @@ function LoginPage(){
 
         </div>
 
+      </div>
+
+      <div className="Imgdiv">
+        <img className="LoginImg" src={ loginImg } alt="" />
       </div>
         
     </div>
