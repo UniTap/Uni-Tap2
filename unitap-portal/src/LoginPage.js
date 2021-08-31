@@ -79,14 +79,14 @@ function LoginPage(){
 
               <button onClick={ openLoginInfo } className='b b-form i i-more' title='More Info'></button>
                 <p className='field'>
-                  <label htmlFor='user'>E-MAIL</label>
-                  <input type='text' id='user' name='user' title='Username' />
+                  <label htmlFor='user'>Email</label>
+                  <input type='text' id='user' name='user' title='Username' placeholder='Enter your Email'/>
                   <span id='valida' className='i i-warning'></span>
                 </p>
 
                 <p className='field'>
-                  <label htmlFor='pass'>PASSWORD</label>
-                  <input type='password' id='pass' name='pass' title='Password' />
+                  <label htmlFor='pass'>Password</label>
+                  <input type='password' id='pass' name='pass' title='Password' placeholder='Enter your Password'/>
                   <span id='valida' className='i i-close'></span>
                 </p>
 
