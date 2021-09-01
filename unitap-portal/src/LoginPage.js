@@ -3,61 +3,61 @@ import $ from 'jquery'
 import "./LoginPage.css"
 import loginImg from "./LoginImg.svg"
 
-function LoginPage(){
+function LoginPage() {
 
-  $(document).ready(function() {
-    $("#do_login").click(function() { 
+  $(document).ready(function () {
+    $("#do_login").click(function () {
       closeLoginInfo();
-      $(this).parent().find('span').css("display","none");
+      $(this).parent().find('span').css("display", "none");
       $(this).parent().find('span').removeclassName("i-save");
       $(this).parent().find('span').removeclassName("i-warning");
       $(this).parent().find('span').removeclassName("i-close");
-      
+
       var proceed = true;
-      $("#login_form input").each(function(){
-            
-        if(!$.trim($(this).val())){
+      $("#login_form input").each(function () {
+
+        if (!$.trim($(this).val())) {
           $(this).parent().find('span').addclassName("i-warning");
-          $(this).parent().find('span').css("display","block");  
+          $(this).parent().find('span').css("display", "block");
           proceed = false;
         }
 
       });
-       
-      if(proceed){ //everything looks good! proceed...
-      
+
+      if (proceed) { //everything looks good! proceed...
+
         $(this).parent().find('span').addclassName("i-save");
-        $(this).parent().find('span').css("display","block");
+        $(this).parent().find('span').css("display", "block");
 
       }
     });
-    
+
     //reset previously results and hide all message on .keyup()
-    $("#login_form input").keyup(function() { 
-      $(this).parent().find('span').css("display","none");
+    $("#login_form input").keyup(function () {
+      $(this).parent().find('span').css("display", "none");
     });
-  
+
     openLoginInfo();
     setTimeout(closeLoginInfo, 1000);
   });
 
   function openLoginInfo() {
-    $(document).ready(function(){ 
-      $('.b-form').css("opacity","0.01");
-      $('.box-form').css("left","-37%");
-      $('.box-info').css("right","-37%");
+    $(document).ready(function () {
+      $('.b-form').css("opacity", "0.01");
+      $('.box-form').css("left", "-37%");
+      $('.box-info').css("right", "-37%");
     });
   }
 
   function closeLoginInfo() {
-    $(document).ready(function(){ 
-      $('.b-form').css("opacity","1");
-      $('.box-form').css("left","0px");
-      $('.box-info').css("right","-5px"); 
+    $(document).ready(function () {
+      $('.b-form').css("opacity", "1");
+      $('.box-form').css("left", "0px");
+      $('.box-info').css("right", "-5px");
     });
   }
 
-  $(window).on('resize', function(){
+  $(window).on('resize', function () {
     closeLoginInfo();
   });
 
@@ -78,22 +78,23 @@ function LoginPage(){
 
             <div className='fieldset-body' id='login_form'>
 
-              <button onClick={ openLoginInfo } className='b b-form i i-more' title='More Info'></button>
-                <p className='field'>
-                  <label htmlFor='user'>Email</label>
-                  <input type='text' id='user' name='user' title='Username' placeholder='Enter your Email'/>
-                  <span id='valida' className='i i-warning'></span>
-                </p>
+              <button onClick={openLoginInfo} className='b b-form i i-more' title='More Info'></button>
+              
+              <p className='field'>              
+                <label htmlFor='user'>Email</label>
+                <input type='text' id='user' name='user' title='Username' placeholder='Enter your Email' />
+                <span id='valida' className='i i-warning'></span>
+              </p>
 
-                <p className='field'>
-                  <label htmlFor='pass'>Password</label>
-                  <input type='password' id='pass' name='pass' title='Password' placeholder='Enter your Password'/>
-                  <span id='valida' className='i i-close'></span>
-                </p>
+              <p className='field'>
+                <label htmlFor='pass'>Password</label>
+                <input type='password' id='pass' name='pass' title='Password' placeholder='Enter your Password' />
+                <span id='valida' className='i i-close'></span>
+              </p>
 
-                <label className='checkbox'><input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in</label>
+              <label className='checkbox'><input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in</label>
 
-                <input type='submit' id='do_login' value='GET STARTED' title='Get Started' />
+              <input type='submit' id='do_login' value='LOGIN' title='LOGIN' />
 
             </div>
 
@@ -103,12 +104,12 @@ function LoginPage(){
 
         <div className='box-info'>
           <p>
-            <button onClick={ closeLoginInfo } className='b b-info i i-left' title='Back to Sign In'></button>
+            <button onClick={closeLoginInfo} className='b b-info i i-left' title='Back to Sign In'></button>
             Need Help?
           </p>
 
           <div className='line-wh'></div>
-          
+
           <button className='b-support' title='Forgot Password?'> Forgot Password?</button>
           <button className='b-support' title='Contact Support'> Contact Support</button>
           <div className='line-wh'></div>
@@ -119,9 +120,9 @@ function LoginPage(){
       </div>
 
       <div className="Imgdiv">
-        <img className="LoginImg" src={ loginImg } alt="" />
+        <img className="LoginImg" src={loginImg} alt="" />
       </div>
-        
+
     </div>
   )
 }
