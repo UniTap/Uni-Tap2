@@ -1,0 +1,48 @@
+:root {
+    --color-white: #fff;
+    --color-darkOrange: #ff5622e1;
+}
+
+.horizontalList {
+    list-style-type: none;
+    margin: 0;
+    padding: 31px 0;
+    background-color: var(--color-darkOrange);
+}
+
+.horizontal-navs {
+    display: inline;
+    padding: 5px 12px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-white);
+}
+
+.Pagedivide {
+    display: flex;
+}
+
+.verticalBar {
+    flex: 0.4;
+}
+
+.verticalList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color: var(--color-darkOrange);
+    height: 84vh;
+    width: 17%;
+}
+
+.vertical-navs {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-white);
+    padding: 12px 10px;
+}

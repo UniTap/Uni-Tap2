@@ -1,7 +1,7 @@
 import React from 'react'
 import $ from 'jquery'
 import "./LoginPage.css"
-import loginImg from "./loginImg.svg"
+import loginImg from "./LoginImg.svg"
 
 function LoginPage() {
 
