@@ -1,5 +1,7 @@
 :root {
     --color-white: #fff;
+    --color-darkOrange: #ff5622e1;
+    --color-black: #000;
 }
 
 .HomePage {
@@ -8,6 +10,9 @@
     padding: 0;
 }
 
-.content {
-    flex: 0.6;
+.content h2 {
+    text-align: left;
+    text-align: center;
+    margin-top: 10%;
+    color: var(--color-black);
 }

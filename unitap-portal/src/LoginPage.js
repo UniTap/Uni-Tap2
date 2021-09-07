@@ -1,7 +1,7 @@
 import React from 'react'
 import $ from 'jquery'
 import "./LoginPage.css"
-import loginImg from "./LoginImg.svg"
+import loginImg from "./loginImg.svg"
 
 function LoginPage() {
 
@@ -63,8 +63,9 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-
       <div className='box'>
+
+        
 
         <div className='box-form'>
 
