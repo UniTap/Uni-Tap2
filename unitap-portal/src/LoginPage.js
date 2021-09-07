@@ -63,9 +63,8 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <div className='box'>
 
-        
+      <div className='box'>
 
         <div className='box-form'>
 
