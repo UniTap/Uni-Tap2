@@ -1,30 +1,33 @@
-import React from 'react';
-import './Navbar.css'
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import React from "react";
+import "./Navbar.css";
+import clsx from "clsx";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Drawer from "@material-ui/core/Drawer";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import List from "@material-ui/core/List";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
 
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import ForumIcon from '@material-ui/icons/Forum';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import SportsBaseballIcon from '@material-ui/icons/SportsBaseball';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import ForumIcon from "@material-ui/icons/Forum";
+import EqualizerIcon from "@material-ui/icons/Equalizer";
+import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import SportsBaseballIcon from "@material-ui/icons/SportsBaseball";
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+
+import ChatIcon from "@material-ui/icons/Chat";
+import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 
 const drawerWidth = 240;
 
@@ -125,14 +128,14 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           {/* <Typography variant="h6" noWrap> */}
-            <div className="horizontalBar">
-              <ul className="horizontalList">
-                <li className="horizontal-navs">Dashboard</li>
-                <li className="horizontal-navs">Notice</li>
-                <li className="horizontal-navs">Violations</li>
-                <li className="horizontal-navs">Uni-Tap Support</li>
-              </ul>
-            </div>
+          <div className="horizontalBar">
+            <ul className="horizontalList">
+              <li className="horizontal-navs"><a href="#">Dashboard</a></li>
+              <li className="horizontal-navs"><a href="#">Notice</a></li>
+              <li className="horizontal-navs"><a href="#">Violations</a></li>
+              <li className="horizontal-navs"><a href="#">Uni-Tap Support</a></li>
+            </ul>
+          </div>
           {/* </Typography> */}
         </Toolbar>
       </AppBar>
@@ -160,29 +163,41 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {["Grievance", "Chat", "Academic Record", "Library"].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <ForumIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+          {["Grievance", "Chat"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <ForumIcon /> : <ChatIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+          {["Academic Record", "Library"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <EqualizerIcon /> : <LocalLibraryIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
         </List>
         <Divider />
         <List>
-          {["Sports Equipment", "Canteen", "Feedback", "Support"].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+          {["Sports Equipment", "Canteen"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <SportsBaseballIcon /> : <FastfoodIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+          {["Feedback", "Support"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <MailIcon /> : <HelpOutlineIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
         </List>
       </Drawer>
       <main className={classes.content}>
