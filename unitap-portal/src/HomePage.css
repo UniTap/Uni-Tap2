@@ -11,6 +11,9 @@
 
 .content {
     flex: 0.6;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 50%;
 }
 
 .MuiAppBar-colorPrimary {

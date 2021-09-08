@@ -11,15 +11,6 @@
     list-style: none;
     display: table;
 }
-/* ul { 
-    margin: 150px auto 0; 
-    padding: 0; 
-    list-style: none; 
-    display: table;
-    width: 600px;
-    text-align: center;
-} */
-
 
 .horizontal-navs {
     display: inline;
@@ -27,8 +18,8 @@
     font-weight: 500;
     font-size: 18px;
     color: var(--color-white);
-    display: table-cell; 
-    position: relative; 
+    display: table-cell;
+    position: relative;
 }
 
 .horizontalList li a {
@@ -37,8 +28,9 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
-  }
-  .horizontalList li a:after {    
+}
+
+.horizontalList li a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -49,11 +41,12 @@
     background: #fff;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
-  }
-  .horizontalList li a:hover:after { 
-    width: 100%; 
-    left: 0; 
-  }
+}
+
+.horizontalList li a:hover:after {
+    width: 100%;
+    left: 0;
+}
 
 .Pagedivide {
     display: flex;
