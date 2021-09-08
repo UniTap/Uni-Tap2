@@ -1,5 +1,6 @@
 :root {
     --color-white: #fff;
+    --color-darkOrange: #ff5700;
 }
 
 .HomePage {
@@ -10,4 +11,8 @@
 
 .content {
     flex: 0.6;
+}
+
+.MuiAppBar-colorPrimary {
+    background-color: var(--color-darkOrange) !important;
 }
