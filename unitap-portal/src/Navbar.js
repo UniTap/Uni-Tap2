@@ -129,11 +129,11 @@ export default function MiniDrawer() {
           </IconButton>
           {/* <Typography variant="h6" noWrap> */}
           <div className="horizontalBar">
+          
             <ul className="horizontalList">
               <li className="horizontal-navs"><a href="#">Dashboard</a></li>
               <li className="horizontal-navs"><a href="#">Notice</a></li>
               <li className="horizontal-navs"><a href="#">Violations</a></li>
-              <li className="horizontal-navs"><a href="#">Uni-Tap Support</a></li>
             </ul>
           </div>
           {/* </Typography> */}
