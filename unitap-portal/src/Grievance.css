@@ -1,0 +1,40 @@
+:root {
+    --color-white: #fff;
+    --color-darkOrange: #ff5700;
+}
+
+
+/* .makeStyles-formControl-2 {
+    margin: 0 !important;
+}
+
+.makeStyles-formControl-4 {
+    margin: 0 !important;
+}
+
+.selectName {
+    margin: 10% !important;
+    display: flex;
+} */
+
+
+/* .makeStyles-formControl-1 {
+    margin: 80px !important;
+} */
+
+.GrievanceForm {
+    box-shadow: #0000006b 2px 3px 13px;
+    margin-top: 12%;
+    margin-left: 25%;
+    width: 50%;
+    padding: 35px;
+}
+
+.sendContent {
+    margin-top: 15px;
+    width: 50%;
+}
+
+#send {
+    border: 1px solid var(--color-darkOrange);
+}

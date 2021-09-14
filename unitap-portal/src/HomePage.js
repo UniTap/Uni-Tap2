@@ -8,7 +8,7 @@ function HomePage() {
     <div className="HomePage">
       <Navbar/>
       <div className="content">
-        
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus voluptates placeat cum ratione consequatur. Repellendus, recusandae autem. Perspiciatis numquam repellendus, est quaerat minima consequuntur sit expedita, similique voluptatem aut autem?
       </div>
     </div>
   )
