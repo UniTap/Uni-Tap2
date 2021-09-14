@@ -97,8 +97,7 @@ export default function GroupedSelect() {
   const classes = useStyles();
 
   return (
-    <div>
-      <Navbar/>
+      <Navbar>
       <div className="GrievanceForm">
         <div>
           <FormControl className={classes.formControl}>
@@ -121,6 +120,6 @@ export default function GroupedSelect() {
           <textarea name="" id="send" cols="60" rows="10" placeholder="Max limit: (300 words)"></textarea>
         </div>
       </div>
-    </div>
+       </Navbar>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Navbar.css";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -9,27 +9,26 @@ import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
+import { IconButton } from '@material-ui/core'
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import ForumIcon from "@material-ui/icons/Forum";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
-import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import SportsBaseballIcon from "@material-ui/icons/SportsBaseball";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 
 import ChatIcon from "@material-ui/icons/Chat";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
+import { Link } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
+    padding: theme.spacing(0, 10),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
@@ -91,12 +90,82 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  IconColor:{
+    color: '#ggg'
+  },
+  selectedItem:{
+    color: '#fff',
+    backgroundColor:'#000'
+  }
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer({children}) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(0)
+  const IconName = (index) => {
+    const obj = {
+      0: (
+        
+          <Link to='/Grievance'>
+            <ForumIcon />
+          </Link>
+       
+      ),
+      1: (
+        
+          <Link to='/Chat'>
+            <ChatIcon />
+          </Link>
+       
+      ),
+      2: (
+        
+          <Link to='/AcademicRecord'>
+            <EqualizerIcon />
+          </Link>
+       
+      ),
+      3: (
+        
+          <Link to='/Library'>
+            <LocalLibraryIcon />
+          </Link>
+       
+      ),
+      4: (
+        
+          <Link to='/Sports'>
+            <SportsBaseballIcon />
+          </Link>
+       
+      ),
+      5: (
+        
+          <Link to='/Canteen'>
+            <FastfoodIcon />
+          </Link>
+       
+      ),
+      6: (
+        
+          <Link to='/Feedback'>
+            <MailIcon />
+          </Link>
+       
+      ),
+      7: (
+        
+          <Link to='/Support'>
+            <HelpOutlineIcon />
+          </Link>
+       
+      ),
+    }
+
+    return obj[index];
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -110,17 +179,17 @@ export default function MiniDrawer() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position='fixed'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
+            color='inherit'
+            aria-label='open drawer'
             onClick={handleDrawerOpen}
-            edge="start"
+            edge='start'
             className={clsx(classes.menuButton, {
               [classes.hide]: open,
             })}
@@ -128,19 +197,24 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           {/* <Typography variant="h6" noWrap> */}
-          <div className="horizontalBar">
-          
-            <ul className="horizontalList">
-              <li className="horizontal-navs"><a href="#">Dashboard</a></li>
-              <li className="horizontal-navs"><a href="#">Notice</a></li>
-              <li className="horizontal-navs"><a href="#">Violations</a></li>
+          <div className='horizontalBar'>
+            <ul className='horizontalList'>
+              <li className='horizontal-navs'>
+                <a href='#'>Dashboard</a>
+              </li>
+              <li className='horizontal-navs'>
+                <a href='#'>Notice</a>
+              </li>
+              <li className='horizontal-navs'>
+                <a href='#'>Violations</a>
+              </li>
             </ul>
           </div>
           {/* </Typography> */}
         </Toolbar>
       </AppBar>
       <Drawer
-        variant="permanent"
+        variant='permanent'
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
           [classes.drawerClose]: !open,
@@ -154,7 +228,7 @@ export default function MiniDrawer() {
       >
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
+            {theme.direction === 'rtl' ? (
               <ChevronRightIcon />
             ) : (
               <ChevronLeftIcon />
@@ -163,43 +237,34 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {["Grievance", "Chat"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <ForumIcon /> : <ChatIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-          {["Academic Record", "Library"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <EqualizerIcon /> : <LocalLibraryIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["Sports Equipment", "Canteen"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <SportsBaseballIcon /> : <FastfoodIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-          {["Feedback", "Support"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <MailIcon /> : <HelpOutlineIcon />}
-              </ListItemIcon>
+          {[
+            'Grievance',
+            'Chat',
+            'Academic Record',
+            'Library',
+            'Sports Equipment',
+            'Canteen',
+            'Feedback',
+            'Support',
+          ].map((text, index) => (
+            <ListItem
+              button
+              key={text}
+              selected={selectedItem === index}
+              classes={{ selected: selectedItem }}
+            >
+              <IconButton onClick={() => setSelectedItem(index)}>
+                <ListItemIcon>{IconName(index)}</ListItemIcon>
+              </IconButton>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
       </Drawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        {children}
+      </main>
       {/* <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
@@ -233,5 +298,5 @@ export default function MiniDrawer() {
         </Typography>
       </main> */}
     </div>
-  );
+  )
 }

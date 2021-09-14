@@ -4,23 +4,25 @@ import HomePage from './HomePage';
 import Noticepage from './Noticepage'
 import Profilepage from './Profile'
 import Grievance from './Grievance';
+import Canteen from './Canteen'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
         <Switch>
-          <Route path="/" component={ LoginPage } exact/>
-          <Route path="/HomePage" component={ HomePage } exact/>
-          <Route path="/Notice" component={ Noticepage } exact/>
-          <Route path="/Profile" component={ Profilepage } exact/>
-          <Route path="/Grievance" component={ Grievance } exact/>
+          <Route path='/' component={LoginPage} exact />
+          <Route path='/HomePage' component={HomePage} exact />
+          <Route path='/Notice' component={Noticepage} exact />
+          <Route path='/Profile' component={Profilepage} exact />
+          <Route path='/Grievance' component={Grievance} exact />
+          <Route path='/Canteen' component={Canteen} exact />
         </Switch>
       </Router>
       {/* <LoginPage/> */}
     </div>
-  );
+  )
 }
 
 export default App;
