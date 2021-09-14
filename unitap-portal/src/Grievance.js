@@ -70,18 +70,15 @@
 
 // export default Grievance;
 
-
-
-import React from 'react';
-import './Grievance.css'
-import Navbar from './Navbar';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
+import React from "react";
+import "./Grievance.css";
+import Navbar from "./Navbar";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -98,11 +95,13 @@ export default function GroupedSelect() {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      {/* the grievance form */}
       <div className="GrievanceForm">
         <div>
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="grouped-native-select">To:</InputLabel>
+            {/* options for selection */}
             <Select native defaultValue="" id="grouped-native-select">
               <option aria-label="None" value="" />
               <optgroup label="Admin">
@@ -115,10 +114,15 @@ export default function GroupedSelect() {
               </optgroup>
             </Select>
           </FormControl>
-          
         </div>
         <div className="sendContent">
-          <textarea name="" id="send" cols="60" rows="10" placeholder="Max limit: (300 words)"></textarea>
+          <textarea
+            name=""
+            id="send"
+            cols="60"
+            rows="10"
+            placeholder="Max limit: (300 words)"
+          ></textarea>
         </div>
       </div>
     </div>

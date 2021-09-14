@@ -1,3 +1,4 @@
+// importing every icon and other needfulls from material ui which is directly called in below css
 import React from "react";
 import "./Navbar.css";
 import clsx from "clsx";
@@ -18,19 +19,18 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import ForumIcon from "@material-ui/icons/Forum";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import SportsBaseballIcon from "@material-ui/icons/SportsBaseball";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
-
 import ChatIcon from "@material-ui/icons/Chat";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 
 const drawerWidth = 240;
 
+//style of the navbar
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -93,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//grouping the whole navbar return so that it can be used everywhere
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
@@ -129,11 +130,16 @@ export default function MiniDrawer() {
           </IconButton>
           {/* <Typography variant="h6" noWrap> */}
           <div className="horizontalBar">
-          
             <ul className="horizontalList">
-              <li className="horizontal-navs"><a href="#">Dashboard</a></li>
-              <li className="horizontal-navs"><a href="#">Notice</a></li>
-              <li className="horizontal-navs"><a href="#">Violations</a></li>
+              <li className="horizontal-navs">
+                <a href="#">Dashboard</a>
+              </li>
+              <li className="horizontal-navs">
+                <a href="#">Notice</a>
+              </li>
+              <li className="horizontal-navs">
+                <a href="#">Violations</a>
+              </li>
             </ul>
           </div>
           {/* </Typography> */}
@@ -162,6 +168,8 @@ export default function MiniDrawer() {
           </IconButton>
         </div>
         <Divider />
+
+        {/* first partition of navbar */}
         <List>
           {["Grievance", "Chat"].map((text, index) => (
             <ListItem button key={text}>
@@ -181,6 +189,8 @@ export default function MiniDrawer() {
           ))}
         </List>
         <Divider />
+
+        {/* second partition of navbar */}
         <List>
           {["Sports Equipment", "Canteen"].map((text, index) => (
             <ListItem button key={text}>
