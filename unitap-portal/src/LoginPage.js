@@ -109,7 +109,7 @@ function LoginPage() {
               </p>
 
               <label className="checkbox">
-                <input type="checkbox" value="TRUE" title="Keep me Signed in" />{" "}
+                <input type="checkbox" value="TRUE" title="Keep me Signed in" id="checkbox"/>{" "}
                 Keep me Signed in
               </label>
 
