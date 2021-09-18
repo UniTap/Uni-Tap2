@@ -1,0 +1,21 @@
+:root {
+    --color-white: #fff;
+    --color-darkOrange: #ff5700;
+}
+
+.HomePage {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    flex: 0.6;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 50%;
+}
+
+.MuiAppBar-colorPrimary {
+    background-color: var(--color-darkOrange) !important;
+}
