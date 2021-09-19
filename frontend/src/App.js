@@ -6,6 +6,7 @@ import Noticepage from './pages/Notice/Noticepage';
 import Canteen from './pages/Canteen/Canteen';
 import Grievance from './pages/Grievance/Grievance';
 import Profile from './pages/Profile/Profile';
+import Chat from './pages/Chat/Chat'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/Profile' component={Profile} exact />
           <Route path='/Grievance' component={Grievance} exact />
           <Route path='/Canteen' component={Canteen} exact />
+          <Route path='/Chat' component={Chat} exact />
         </Switch>
       </Router>
       {/* <LoginPage/> */}

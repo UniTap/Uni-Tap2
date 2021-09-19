@@ -9,15 +9,15 @@ function LoginPage() {
     $("#do_login").click(function () {
       closeLoginInfo();
       $(this).parent().find('span').css("display", "none");
-      $(this).parent().find('span').removeclassName("i-save");
-      $(this).parent().find('span').removeclassName("i-warning");
-      $(this).parent().find('span').removeclassName("i-close");
+      $(this).parent().find('span').removeClass("i-save");
+      $(this).parent().find('span').removeClass("i-warning");
+      $(this).parent().find('span').removeClass("i-close");
 
       var proceed = true;
       $("#login_form input").each(function () {
 
         if (!$.trim($(this).val())) {
-          $(this).parent().find('span').addclassName("i-warning");
+          $(this).parent().find('span').addClass("i-warning");
           $(this).parent().find('span').css("display", "block");
           proceed = false;
         }
@@ -26,7 +26,7 @@ function LoginPage() {
 
       if (proceed) { //everything looks good! proceed...
 
-        $(this).parent().find('span').addclassName("i-save");
+        $(this).parent().find('span').addClass("i-save");
         $(this).parent().find('span').css("display", "block");
 
       }
