@@ -109,56 +109,56 @@ export default function MiniDrawer({children}) {
       0: (
         
           <Link to='/Grievance'>
-            <ForumIcon />
+            <ForumIcon className="linkIcon"/>
           </Link>
        
       ),
       1: (
         
           <Link to='/Chat'>
-            <ChatIcon />
+            <ChatIcon className="linkIcon"/>
           </Link>
        
       ),
       2: (
         
           <Link to='/AcademicRecord'>
-            <EqualizerIcon />
+            <EqualizerIcon className="linkIcon"/>
           </Link>
        
       ),
       3: (
         
           <Link to='/Library'>
-            <LocalLibraryIcon />
+            <LocalLibraryIcon className="linkIcon"/>
           </Link>
        
       ),
       4: (
         
           <Link to='/Sports'>
-            <SportsBaseballIcon />
+            <SportsBaseballIcon className="linkIcon"/>
           </Link>
        
       ),
       5: (
         
           <Link to='/Canteen'>
-            <FastfoodIcon />
+            <FastfoodIcon className="linkIcon"/>
           </Link>
        
       ),
       6: (
         
           <Link to='/Feedback'>
-            <MailIcon />
+            <MailIcon className="linkIcon"/>
           </Link>
        
       ),
       7: (
         
           <Link to='/Support'>
-            <HelpOutlineIcon />
+            <HelpOutlineIcon className="linkIcon"/>
           </Link>
        
       ),
