@@ -213,11 +213,7 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-<<<<<<< HEAD
       
-
-
-=======
       {/* <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
@@ -250,7 +246,6 @@ export default function MiniDrawer() {
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
       </main> */}
->>>>>>> eaba3d14abccea4db894059d0d4daeb7a770ca5c
     </div>
   );
 }

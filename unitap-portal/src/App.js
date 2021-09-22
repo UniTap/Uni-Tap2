@@ -5,7 +5,8 @@ import Noticepage from './Noticepage'
 import Profilepage from './Profile'
 import Grievance from './Grievance';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
-
+import violations from './violations';
+//
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Notice" component={ Noticepage } exact/>
           <Route path="/Profile" component={ Profilepage } exact/>
           <Route path="/Grievance" component={ Grievance } exact/>
+          <Route path="/Violation" component={ violations } exact/>
         </Switch>
       </Router>
       {/* <LoginPage/> */}
