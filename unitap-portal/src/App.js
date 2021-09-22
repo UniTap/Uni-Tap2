@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Noticepage from './Noticepage'
 import Profilepage from './Profile'
 import Grievance from './Grievance';
+import Chat from './Chat';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import violations from './violations';
 //
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Profile" component={ Profilepage } exact/>
           <Route path="/Grievance" component={ Grievance } exact/>
           <Route path="/Violation" component={ violations } exact/>
+          <Route path="/Chat" component={ Chat } exact/>
         </Switch>
       </Router>
       {/* <LoginPage/> */}
