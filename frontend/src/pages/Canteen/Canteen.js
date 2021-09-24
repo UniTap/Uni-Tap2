@@ -165,7 +165,11 @@ const Canteen = () => {
           aria-label='icon label tabs example'
           classes={{ root: classes.Tabs }}
         >
-          <Tab icon={<EditIcon />} label='Place Order' {...a11yProps(0)} />
+          <Tab  
+          icon={<EditIcon />} 
+          label='Place Order' 
+          {...a11yProps(0)} 
+          />
           <Tab
             icon={<MenuBookIcon />}
             label='Order History'

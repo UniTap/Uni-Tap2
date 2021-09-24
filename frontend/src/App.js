@@ -4,6 +4,8 @@ import LoginPage from './pages/Login/LoginPage';
 import HomePage from './pages/Home/HomePage';
 import Noticepage from './pages/Notice/Noticepage';
 import Canteen from './pages/Canteen/Canteen';
+import Library from './pages/Library/Library';
+import Sports from './pages/Sports/Sports';
 import Grievance from './pages/Grievance/Grievance';
 import Profile from './pages/Profile/Profile';
 import Chat from './pages/Chat/Chat'
@@ -18,6 +20,8 @@ function App() {
           <Route path='/Notice' component={Noticepage} exact />
           <Route path='/Profile' component={Profile} exact />
           <Route path='/Grievance' component={Grievance} exact />
+          <Route path='/Library' component={Library} exact />
+          <Route path='/Sports' component={Sports} exact />
           <Route path='/Canteen' component={Canteen} exact />
           <Route path='/Chat' component={Chat} exact />
         </Switch>
