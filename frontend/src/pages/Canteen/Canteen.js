@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../../components/Navbar'
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,19 +11,23 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import { Button } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, List, ListItem } from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+// import Card from '@mui/material/Card'
+// import CardActions from '@mui/material/CardActions'
+// import CardContent from '@mui/material/CardContent'
+// import CardMedia from '@mui/material/CardMedia'
 
 const useStyles = makeStyles({
 center:{
   display: 'flex',
   justifyContent:'space-around',
-  flexDirection:'column'
+  flexDirection:'column',
     },
   paper: {
     flexGrow: 1,
@@ -36,7 +40,8 @@ center:{
   },
   addOrder: {
     borderRadius:'20px',
-    
+    marginLeft:'20%',
+    marginRight:'20%'
   },
   table: {
     minWidth: 500,
@@ -52,7 +57,11 @@ head: {
   body: {
     fontSize: 14,
   },
-  
+  cardStyle:{
+    maxWidth:'50%',
+    marginLeft:'auto',
+    marginRight:'auto'
+  }
 })
 
 function TabPanel(props) {
@@ -96,19 +105,26 @@ const Canteen = () => {
     setValue(newValue)
   }
 
-  function createData(srno, name, quantity, price) {
-    return { srno, name, quantity, price }
+  function createData(srno, name, price,quantity, netItemprice) {
+    return { srno, name, price, quantity, netItemprice }
+  }
+
+  function subtotal(items) {
+    return items.reduce((acc, curr) => acc + curr.netItemprice, 0)
   }
 
   const rows = [
-    createData(1,'Frozen yoghurt',2,100),
-    createData(2,'Ice cream sandwich',1,75),
-    createData(3,'Eclair', 2,50),
-    createData(4,'Cupcake', 3, 125),
-    createData(5,'Gingerbread', 3,90),
-  ];
+    createData(1, 'Frozen yoghurt', 50, 2, 100),
+    createData(2, 'Ice cream sandwich', 75, 1, 75),
+    createData(3, 'Eclair', 25, 2, 50),
+    createData(4, 'Cupcake', 25, 3, 125),
+    createData(5, 'Gingerbread', 30, 3, 90),
+  ]
+
+  let total = subtotal(rows);
 
   const placeOrder = () => {
+   console.log(total)
     return (
       <div className={classes.center}>
         <Button
@@ -117,18 +133,20 @@ const Canteen = () => {
           size='large'
           classes={{ root: classes.addOrder }}
           startIcon={<AddCircleIcon />}
+          onClick={() => setValue(2)}
         >
-          Place Order
+          Create new Order
         </Button>
         <h2>Pending Orders</h2>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label='customized table'>
-            <TableHead  classes={{root: classes.head}} >
+            <TableHead classes={{ root: classes.head }}>
               <TableRow>
                 <TableCell>sr.no</TableCell>
                 <TableCell align='left'>Ordered Item</TableCell>
-                <TableCell align='right'>Quantity&nbsp;</TableCell>
                 <TableCell align='right'>Price&nbsp;</TableCell>
+                <TableCell align='right'>Quantity&nbsp;</TableCell>
+                <TableCell align='right'>Net Item Price&nbsp;</TableCell>
               </TableRow>
             </TableHead>
             <TableBody className={classes.body}>
@@ -136,10 +154,20 @@ const Canteen = () => {
                 <TableRow key={row.name}>
                   <TableCell align='left'>{row.srno}</TableCell>
                   <TableCell align='left'>{row.name}</TableCell>
-                  <TableCell align='right'>{row.quantity}</TableCell>
                   <TableCell align='right'>{row.price}</TableCell>
+                  <TableCell align='right'>{row.quantity}</TableCell>
+                  <TableCell align='right'>{row.netItemprice}</TableCell>
                 </TableRow>
               ))}
+              <TableRow>
+                <TableCell rowSpan={3} />
+                <TableCell colSpan={3} align='right'>
+                  <strong>Net total</strong>
+                </TableCell>
+                <TableCell align='right'>
+                  <strong> {total}</strong>
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
@@ -149,8 +177,36 @@ const Canteen = () => {
   const orderhistory = () => {
     return <h2>order history</h2>
   }
+
+  const menuItem = () => (
+    <Card classes={{ root: classes.cardStyle }}>
+      <CardContent>
+        <Typography gutterBottom variant='h5' component='div'>
+          chicken biryani
+        </Typography>
+        <Typography variant='body2' color='text.secondary'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nemo
+          exercitationem dolores perspiciatis numquam similique ipsa placeat vel
+          officiis quia repellat totam omnis, rem eum ullam iure, facere earum
+          nisi.
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size='small'>Add to Order</Button>
+      </CardActions>
+    </Card>
+  )
   const todayMenu = () => {
-    return <h2>Today`s Menu</h2>
+    return (
+      <div>
+        <h2>Today`s Menu</h2>
+        <List>
+          <ListItem>{menuItem()}</ListItem>
+          <ListItem>{menuItem()}</ListItem>
+          <ListItem> {menuItem()}</ListItem>
+        </List>
+      </div>
+    )
   }
 
   return (
