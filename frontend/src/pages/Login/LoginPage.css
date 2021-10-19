@@ -62,6 +62,7 @@ h3 {
 h2 {
     color: #ff5722;
     text-align: center;
+    margin: 13px 0px 0px 15px;
 }
 
 h3 {
@@ -244,6 +245,7 @@ button:focus {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0 16px;
 }
 
 .b-form {
@@ -392,6 +394,14 @@ p.field span.i {
     -moz-animation: bounceIn 0.6s linear;
     -o-animation: bounceIn 0.6s linear;
     animation: bounceIn 0.6s linear;
+}
+
+.checkbox {
+    float: left;
+}
+
+.checkboxtick {
+    width: 50px;
 }
 
 

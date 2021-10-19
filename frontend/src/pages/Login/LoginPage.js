@@ -190,6 +190,7 @@ function LoginPage() {
                     type='checkbox'
                     value='TRUE'
                     title='Keep me Signed in'
+                    className='checkboxtick'
                   />
                   Keep me Signed in
                 </label>
