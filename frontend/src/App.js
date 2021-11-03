@@ -4,25 +4,29 @@ import LoginPage from './pages/Login/LoginPage';
 import HomePage from './pages/Home/HomePage';
 import Noticepage from './pages/Notice/Noticepage';
 import Canteen from './pages/Canteen/Canteen';
+import Library from './pages/Library/Library';
+import Sports from './pages/Sports/Sports';
 import Grievance from './pages/Grievance/Grievance';
 import Profile from './pages/Profile/Profile';
 import Chat from './pages/Chat/Chat'
-import Violation from './pages/Violation/violation';
-import PrivateRoute from './auth/PrivateRoute';
+
+import NoticeAdmin from './pages/Admin/NoticeAdmin/NoticeAdmin';
 
 function App() {
   return (
     <div className='App'>
       <Router>
         <Switch>
-          <Route path='/signin' component={LoginPage} exact />
-          <PrivateRoute path='/HomePage' component={HomePage} exact />
-          <PrivateRoute path='/Notice' component={Noticepage} exact />
-          <PrivateRoute path='/Profile' component={Profile} exact />
-          <PrivateRoute path='/Grievance' component={Grievance} exact />
-          <PrivateRoute path='/Canteen' component={Canteen} exact />
-          <PrivateRoute path='/Chat' component={Chat} exact />
-          <PrivateRoute path='/Violation' component={Violation} />
+          <Route path='/' component={LoginPage} exact />
+          <Route path='/HomePage' component={HomePage} exact />
+          <Route path='/Notice' component={Noticepage} exact />
+          <Route path='/Profile' component={Profile} exact />
+          <Route path='/Grievance' component={Grievance} exact />
+          <Route path='/Library' component={Library} exact />
+          <Route path='/Sports' component={Sports} exact />
+          <Route path='/Canteen' component={Canteen} exact />
+          <Route path='/Chat' component={Chat} exact />
+          <Route path='/NoticeAdmin' component={NoticeAdmin} exact />
         </Switch>
       </Router>
       {/* <LoginPage/> */}
