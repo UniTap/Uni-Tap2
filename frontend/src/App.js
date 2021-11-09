@@ -9,6 +9,7 @@ import Sports from './pages/Sports/Sports';
 import Grievance from './pages/Grievance/Grievance';
 import Profile from './pages/Profile/Profile';
 import Chat from './pages/Chat/Chat'
+import Violation from './pages/Violation/violation'
 
 import NoticeAdmin from './pages/Admin/NoticeAdmin/NoticeAdmin';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Sports' component={Sports} exact />
           <Route path='/Canteen' component={Canteen} exact />
           <Route path='/Chat' component={Chat} exact />
+          <Route path='/Violations' component={Violation} exact />
           <Route path='/NoticeAdmin' component={NoticeAdmin} exact />
         </Switch>
       </Router>

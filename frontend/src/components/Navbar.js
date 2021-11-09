@@ -26,9 +26,11 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 
 import ChatIcon from "@material-ui/icons/Chat";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { signout } from "../auth";
 import { Redirect } from 'react-router'
+
+
 const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
@@ -201,13 +203,13 @@ export default function MiniDrawer({children}) {
           <div className='horizontalBar'>
             <ul className='horizontalList'>
               <li className='horizontal-navs'>
-                <a href='#'>Dashboard</a>
+              <NavLink to="/HomePage">Dashboard</NavLink>
               </li>
               <li className='horizontal-navs'>
-                <a href='#'>Notice</a>
+                <NavLink to="/Notice">Notice</NavLink>
               </li>
               <li className='horizontal-navs'>
-                <a href='#'>Violations</a>
+                <NavLink to="/Violations">Violations</NavLink>
               </li>
               <li className='horizontal-navs'>
                 <span onClick={() => signout(() => {console.log('signed out sucessfully')})}>
