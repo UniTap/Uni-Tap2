@@ -203,7 +203,7 @@ export default function MiniDrawer({children}) {
           <div className='horizontalBar'>
             <ul className='horizontalList'>
               <li className='horizontal-navs'>
-              <NavLink to="/HomePage">Dashboard</NavLink>
+                <NavLink to="/HomePage">Dashboard</NavLink>
               </li>
               <li className='horizontal-navs'>
                 <NavLink to="/Notice">Notice</NavLink>
